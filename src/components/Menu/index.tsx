@@ -56,7 +56,7 @@ const Menu:FC<MenuProps> = ({setShowMenu, selectShowMenu, showMenu}) => {
       <nav className={classNames}>
         <ul>
           <li>
-            <a href="/home" onClick={onLogoutHandler}>
+            <a href="/" onClick={onLogoutHandler}>
               <BiLogOut/>&nbsp;Home
             </a>
           </li>

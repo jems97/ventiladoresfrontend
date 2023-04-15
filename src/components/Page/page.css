@@ -1,6 +1,6 @@
 .page {
   background-color: #ddd;
-  color: #333;
+  color: #00AFF0;
   min-height: 100vh;
 }
 .absoluteCenter {
@@ -14,7 +14,7 @@
   min-height: calc(100vh - 4.1rem);
 }
 .content {
-  background-color:#fff;
+  background-color:#27272B;
   padding:1rem;
   min-height: 100vh;
 }
