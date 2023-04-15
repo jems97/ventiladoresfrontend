@@ -2,7 +2,7 @@ import Page from "@/components/Page";
 import { VentiladoresUX } from "./VentiladoresUX";
 import { VentiladorFormUX } from "./VentiladorFormUX";
 import { FC, useState } from "react";
-import { useGetAllQuery, useAddNewMutation, useGetByIdQuery } from "@/store/services/empServices";
+import { useGetAllQuery, useAddNewMutation, useGetByIdQuery } from "@/store/services/ventiServices";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const Ventiladores: FC = () => {
@@ -63,8 +63,8 @@ export const VentiladorForm: FC = () => {
     navigate("/ventiladores");
   }
   return <VentiladorFormUX
-    modelo={modelo}
     marca={marca}
+    modelo={modelo}
     rpm={rpm}
     precio={precio}
     onChangeHandler={onChangeHandler}
