@@ -1,7 +1,9 @@
 //import { setShowMenu, selectShowMenu } from "@store/Slices/appSlice";
 //import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-//import { selectAuth, resetSecData } from "@store/Slices/secSlice";
+import { selectSec } from "@/store/slices/secSlice";
+import { RootState } from "@/store/store";
 
 import {FC} from 'react';
 import {BiLogIn, BiLogOut, BiUserPlus } from 'react-icons/bi';
@@ -60,14 +62,19 @@ const Menu:FC<MenuProps> = ({setShowMenu, selectShowMenu, showMenu}) => {
               <BiLogOut/>&nbsp;Home
             </a>
           </li>
+          <li>
+            <a href="/ventiladores" onClick={onClickHandler}>
+              <BiLogOut/>&nbsp;Ventilador
+            </a>
+          </li>
            <li>
             <a href="/version" onClick={onClickHandler}>
               <BiLogOut/>&nbsp;Version
             </a>
           </li>
            <li>
-            <a href="/another" onClick={onClickHandler}>
-              <BiLogOut/>&nbsp;Not Page Yet
+            <a href="/about" onClick={onClickHandler}>
+              <BiLogOut/>&nbsp;Acerca de nosotros
             </a>
           </li>
         </ul>

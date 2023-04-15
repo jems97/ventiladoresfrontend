@@ -44,9 +44,6 @@ export const VentiladorForm: FC = () => {
         case "modelo":
         setModelo(value);
         break;
-        case "modelo":
-        setModelo(value);
-        break;
         case "rpm":
         setRpm(value);
         break;

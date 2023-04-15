@@ -3,7 +3,7 @@ import Page from "../../components/Page";
 
 export const Home: FC = () => {
   return (
-    <Page>
+    <Page pageTitle="Opciones">
       <h1>Solo Ventiladores</h1>
     </Page>
   );

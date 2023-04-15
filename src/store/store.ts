@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import secSlice from './slices/secSlice';
 import { secApi } from './services/secServices';
-import { empApi } from './services/empServices';
+import { ventiApi } from './services/ventiServices';
 
 const preLoadedState = JSON.parse(localStorage.getItem('reduxState') || '{}');
 
@@ -10,12 +10,12 @@ export const store = configureStore({
   reducer: {
     sec: secSlice,
     [secApi.reducerPath]: secApi.reducer,
-    [empApi.reducerPath]: empApi.reducer,
+    [ventiApi.reducerPath]: ventiApi.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat([
       secApi.middleware,
-      empApi.middleware
+      ventiApi.middleware
   ]),
   preloadedState: preLoadedState
 });
