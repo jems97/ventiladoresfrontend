@@ -18,7 +18,7 @@ export const ProveedorFormUX: FC<IProveedoresFormUXProps> = ({
   onClickHandler
 }) => {
   return (
-    <Page useAbsoluteCenter={true} pageTitle="Nuevo Proveedores">
+    <Page pageTitle="Nuevo Proveedores">
       <div className="login-ux">
         <Field
           name="nombre"
