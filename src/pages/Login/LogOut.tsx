@@ -12,9 +12,9 @@ const Logout = () => {
 
     useEffect(() => {
         dispatch(clearSec);
-        navigate('/login');
         localStorage.removeItem('reduxState');
         localStorage.removeItem('token');
+        navigate('/login');
     })
     return (
       <>

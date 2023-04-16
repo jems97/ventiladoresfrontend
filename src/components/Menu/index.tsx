@@ -16,8 +16,8 @@ interface MenuProps {
 }
 
 const Menu:FC<MenuProps> = ({setShowMenu, selectShowMenu, showMenu}) => {
-  const token = localStorage.getItem('token');
   console.log(localStorage.getItem('token'));
+  const token = localStorage.getItem('token');
   const user = token; //useSelector(selectAuth);
   //const showMenu = useSelector(selectShowMenu);
   //const dispatch = useDispatch();
@@ -29,14 +29,6 @@ const Menu:FC<MenuProps> = ({setShowMenu, selectShowMenu, showMenu}) => {
     //dispatch(setShowMenu(!showMenu));
     setShowMenu(!showMenu);
     navigate((e.target as HTMLAnchorElement).getAttribute("href")||'');
-  };
-  const onLogoutHandler = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    //dispatch(resetSecData());
-    //dispatch(setShowMenu(!showMenu));
-    setShowMenu(!showMenu);
-    //navigate("/login");
   };
   if (!user) {
     return (
@@ -86,7 +78,7 @@ const Menu:FC<MenuProps> = ({setShowMenu, selectShowMenu, showMenu}) => {
           </li>
           <li>
             <a href="/logout" onClick={onClickHandler}>
-              <BiLogOut/>&nbsp;Logout
+              <BiLogOut/>&nbsp;Cerrar Sesion
             </a>
           </li>
         </ul>
