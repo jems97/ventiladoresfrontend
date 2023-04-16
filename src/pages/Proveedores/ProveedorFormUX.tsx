@@ -18,14 +18,14 @@ export const ProveedorFormUX: FC<IProveedoresFormUXProps> = ({
   onClickHandler
 }) => {
   return (
-    <Page useAbsoluteCenter={true} pageTitle="Login">
+    <Page useAbsoluteCenter={true} pageTitle="Nuevo Proveedores">
       <div className="login-ux">
         <Field
           name="nombre"
           id="nombre"
           type="text"
-          labelText="Marca"
-          placeholder="Nombre de la nombre"
+          labelText="Nombre"
+          placeholder="Escriba el nombre"
           onChange={onChangeHandler}
           value={nombre}
         />
@@ -33,8 +33,8 @@ export const ProveedorFormUX: FC<IProveedoresFormUXProps> = ({
           name="identidad"
           id="identidad"
           type="text"
-          labelText="Modelo"
-          placeholder="Nombre del Modelo"
+          labelText="Identidad"
+          placeholder="Identidad del proveedor"
           onChange={onChangeHandler}
           value={identidad}
         />
@@ -42,8 +42,8 @@ export const ProveedorFormUX: FC<IProveedoresFormUXProps> = ({
           name="ciudad"
           id="ciudad"
           type="text"
-          labelText="Rpm"
-          placeholder="Rpm"
+          labelText="Ciudad"
+          placeholder="Ciudad"
           onChange={onChangeHandler}
           value={ciudad}
         />

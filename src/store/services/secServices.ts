@@ -16,8 +16,16 @@ export const secApi = createApi({
         method: 'POST',
         body: body
       })
+    }),
+    signup: builder.mutation({
+      query: (body) => ({
+        url: 'signin',
+        method: 'POST',
+        body: body
+      })
     })
+
   })
 });
 
-export const {useLoginMutation} = secApi;
+export const {useLoginMutation, useSignupMutation} = secApi;

@@ -20,7 +20,7 @@ export const VentiladorFormUX: FC<IVentiladoresFormUXProps> = ({
   onClickHandler
 }) => {
   return (
-    <Page useAbsoluteCenter={true} pageTitle="Login">
+    <Page useAbsoluteCenter={true} pageTitle="Nuevo Ventilador">
       <div className="login-ux">
         <Field
           name="marca"

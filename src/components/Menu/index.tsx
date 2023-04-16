@@ -6,7 +6,7 @@ import { selectSec } from "@/store/slices/secSlice";
 import { RootState } from "@/store/store";
 
 import {FC} from 'react';
-import {BiLogIn, BiLogOut, BiUserPlus } from 'react-icons/bi';
+import {BiLogIn, BiLogOut, BiUserPlus, BiHomeCircle,BiCategory,BiBuilding,BiCalendarCheck } from 'react-icons/bi';
 import "./Menu.css";
 
 interface MenuProps {
@@ -16,7 +16,9 @@ interface MenuProps {
 }
 
 const Menu:FC<MenuProps> = ({setShowMenu, selectShowMenu, showMenu}) => {
-  const user = {token: ''}; //useSelector(selectAuth);
+  const token = localStorage.getItem('token');
+  console.log(localStorage.getItem('token'));
+  const user = token; //useSelector(selectAuth);
   //const showMenu = useSelector(selectShowMenu);
   //const dispatch = useDispatch();
   const classNames = showMenu ? "menu" : "menu hidden";
@@ -36,7 +38,7 @@ const Menu:FC<MenuProps> = ({setShowMenu, selectShowMenu, showMenu}) => {
     setShowMenu(!showMenu);
     //navigate("/login");
   };
-  if (!user?.token) {
+  if (!user) {
     return (
       <nav className={classNames}>
         <ul>
@@ -58,23 +60,33 @@ const Menu:FC<MenuProps> = ({setShowMenu, selectShowMenu, showMenu}) => {
       <nav className={classNames}>
         <ul>
           <li>
-            <a href="/" onClick={onLogoutHandler}>
-              <BiLogOut/>&nbsp;Home
+            <a href="/" onClick={onClickHandler}>
+              <BiHomeCircle/>&nbsp;Home
             </a>
           </li>
           <li>
             <a href="/ventiladores" onClick={onClickHandler}>
-              <BiLogOut/>&nbsp;Ventilador
+              <BiCategory/>&nbsp;Ventilador
+            </a>
+          </li>
+          <li>
+            <a href="/proveedores" onClick={onClickHandler}>
+              <BiCategory/>&nbsp;Proveedores
             </a>
           </li>
            <li>
             <a href="/version" onClick={onClickHandler}>
-              <BiLogOut/>&nbsp;Version
+              <BiCalendarCheck/>&nbsp;Version
             </a>
           </li>
            <li>
             <a href="/about" onClick={onClickHandler}>
-              <BiLogOut/>&nbsp;Acerca de nosotros
+              <BiBuilding/>&nbsp;Acerca de nosotros
+            </a>
+          </li>
+          <li>
+            <a href="/logout" onClick={onClickHandler}>
+              <BiLogOut/>&nbsp;Logout
             </a>
           </li>
         </ul>

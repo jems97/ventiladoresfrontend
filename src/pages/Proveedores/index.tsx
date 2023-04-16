@@ -4,12 +4,13 @@ import { ProveedorFormUX } from "./ProveedorFormUX";
 import { FC, useState } from "react";
 import { useGetAllQuery, useAddNewMutation, useGetByIdQuery } from "@/store/services/provServices";
 import { useNavigate, useParams } from "react-router-dom";
+import Field from "@/components/InputField/Field";
 
 export const Proveedores: FC = () => {
   const { data: proveedores, isLoading, error } = useGetAllQuery([]);
   const navigate = useNavigate();
   return (
-    <Page>
+    <Page pageTitle="Proveedor">
       <h1>Proveedores</h1>
       <ProveedoresUX
         proveedores={proveedores}
@@ -66,12 +67,40 @@ export const ProveedorForm: FC = () => {
 
 export const ProveedorView: FC = () => {
   const { id = '' } = useParams();
+  const [nombre, setNombre] = useState("");
   const {data: proveedor, isLoading, error} = useGetByIdQuery(id);
+  
   return (
-    <>
+    <Page pageTitle="Ver Proveedor">
     {isLoading && <div>Loading...</div>}
     {error && <div>{error?.toString() || ''}</div>}
-    {proveedor && <div>{JSON.stringify(proveedor)}</div>}
-    </>
+    {proveedor && 
+    <div>
+      <Field
+          name="nombre"
+          id="nombre"
+          type="text"
+          labelText="Nombre"
+          placeholder="Escriba el nombre"
+          value={proveedor.nombre}
+        />
+        <Field
+          name="identidad"
+          id="identidad"
+          type="text"
+          labelText="Identidad"
+          placeholder="Identidad del proveedor"
+          value={proveedor.identidad}
+        />
+        <Field
+          name="ciudad"
+          id="ciudad"
+          type="text"
+          labelText="Ciudad"
+          placeholder="Ciudad"
+          value={proveedor.ciudad}
+        />
+      </div>}
+    </Page>
   );
 };
