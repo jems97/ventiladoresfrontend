@@ -34,8 +34,24 @@ export const ventiApi = createApi({
           body: venti
         }),
       invalidatesTags: ["Ventiladores"]
-    })
+    }),
+    update: builder.mutation({
+      query: (venti:{id: string, marca:string, modelo:string, rpm:string , precio:string}) => (
+        {
+          url: `upd/${venti.id}`,
+          method: 'PUT',
+          body: venti
+        }),
+      invalidatesTags: ["Ventiladores"]
+    }),
+    delete: builder.mutation({
+      query: (id) => ({
+        url: `del/${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: ["Ventiladores"]
+    }),
   })
 });
 
-export const {useGetAllQuery, useAddNewMutation, useGetByIdQuery} = ventiApi;
+export const {useGetAllQuery, useAddNewMutation, useGetByIdQuery, useUpdateMutation, useDeleteMutation} = ventiApi;

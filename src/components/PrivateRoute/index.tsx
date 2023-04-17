@@ -4,9 +4,9 @@ import { selectSec } from "@/store/slices/secSlice";
 import { PropsWithChildren } from "react";
 const PrivateRoute = ({ children, allowedRoles=[] } : PropsWithChildren<{allowedRoles?:string[]}>) => {
   const user = useSelector(selectSec);
-  if (user) {
+  const token = localStorage.getItem('token');
+  if (token) {
     try {
-      const { token } = user;
       if (!token) {
         return <Navigate to="/login" replace />
       }

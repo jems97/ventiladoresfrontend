@@ -23,15 +23,15 @@ const Routes = ()=>{
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/logout" element={<Logout/>} />
         <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
-        <Route path="/version" element={<Version />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/version" element={<PrivateRoute><Version /></PrivateRoute>} />
+        <Route path="/about" element={<PrivateRoute><About /></PrivateRoute>} />
         <Route path="/ventiladores" element={<PrivateRoute><Ventiladores/></PrivateRoute>} />
         <Route path="/ventiladores/new" element={<PrivateRoute><VentiladorForm/></PrivateRoute>} />
         <Route path="/ventiladores/:id" element={<PrivateRoute><VentiladorView/></PrivateRoute>} />
         <Route path="/proveedores" element={<PrivateRoute><Proveedores/></PrivateRoute>} />
         <Route path="/proveedores/new" element={<PrivateRoute><ProveedorForm/></PrivateRoute>} />
         <Route path="/proveedores/:id" element={<PrivateRoute><ProveedorView/></PrivateRoute>} />
-        <Route path="*" element={<Navigate to="/login" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Switch>
     </Router>
   );

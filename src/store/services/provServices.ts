@@ -34,8 +34,24 @@ export const provApi = createApi({
           body: prov
         }),
       invalidatesTags: ["Proveedores"]
-    })
+    }),
+    update: builder.mutation({
+      query: (prov:{id: string, nombre:string, identidad:string, ciudad:string}) => (
+        {
+          url: `upd/${prov.id}`,
+          method: 'PUT',
+          body: prov
+        }),
+      invalidatesTags: ["Proveedores"]
+    }),
+    delete: builder.mutation({
+      query: (id) => ({
+        url: `del/${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: ["Proveedores"]
+    }),
   })
 });
 
-export const {useGetAllQuery, useAddNewMutation, useGetByIdQuery} = provApi;
+export const {useGetAllQuery, useAddNewMutation, useGetByIdQuery,useUpdateMutation, useDeleteMutation} = provApi;

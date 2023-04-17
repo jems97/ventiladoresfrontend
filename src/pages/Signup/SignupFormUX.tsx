@@ -19,7 +19,7 @@ export const SignUpFormUX: FC<INuevoUsuario> = ({
   onClickHandler
 }) => {
   return (
-    <Page useAbsoluteCenter={true} pageTitle="Signup">
+    <Page useAbsoluteCenter={true} pageTitle="Crear Cuenta">
       <div className="signup-ux">
         <h1>Nueva Cuenta</h1>
       <Field

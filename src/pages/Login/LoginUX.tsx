@@ -20,7 +20,7 @@ export const LoginUX: FC<LoginUXProps> = ({
   onClickHandler
 }) => {
   return (
-    <Page useAbsoluteCenter={true} pageTitle="Login">
+    <Page useAbsoluteCenter={true} pageTitle="Iniciar Sesion">
       <div className="login-ux">
         <Field
           name="email"

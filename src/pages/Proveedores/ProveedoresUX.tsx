@@ -28,7 +28,7 @@ export const ProveedoresUX: FC<IProveedoresUXProps> = ({
     <>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      <a onClick={onAddClick}>Add</a>
+      <h3><a onClick={onAddClick}>Nuevo</a></h3>
       {proveedores && proveedores.map((proveedor:IProveedor) => (
         <ProveedorUX
           key={proveedor._id}
@@ -65,9 +65,7 @@ export const ProveedorUX: FC<IProveedorUXProps> = ({
         onViewProveedorClick(_id);
       }}
     >
-      <span>{nombre}</span>
-      <span>{identidad}</span>
-      <span>{ciudad}</span>
+      <a>{nombre} {identidad} {ciudad}</a>
     </div>
   );
 };

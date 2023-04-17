@@ -28,7 +28,7 @@ export const VentiladoresUX: FC<IVentiladoresUXProps> = ({
     <>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      <a onClick={onAddClick}>Add</a>
+      <h3><a onClick={onAddClick}>Nuevo</a></h3>
       {ventiladores && ventiladores.map((ventilador:IVentilador) => (
         <VentiladorUX
           key={ventilador._id}
@@ -68,10 +68,7 @@ export const VentiladorUX: FC<IVentiladorUXProps> = ({
         onViewVentiladorClick(_id);
       }}
     >
-      <span>{marca}</span>
-      <span>{modelo}</span>
-      <span>{rpm}</span>
-      <span>{precio}</span>
+      <a>{marca} {modelo} {rpm} {precio}</a>
     </div>
   );
 };
